@@ -41,7 +41,7 @@ export default function DashboardPage() {
     const checkAuth = async () => {
       const user = await getCurrentUser();
       if (!user) {
-        router.push("/login");
+        router.push("/sign-in");
         return;
       }
       const data = await getHealthEntries();
@@ -54,7 +54,7 @@ export default function DashboardPage() {
   const handleLogout = async () => {
     try {
       await logout();
-      router.push("/login");
+      router.push("/sign-in");
     } catch (error) {
       console.error("Logout error:", error);
     }
