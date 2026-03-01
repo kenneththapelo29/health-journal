@@ -1,4 +1,7 @@
 import { defineConfig } from "@prisma/config";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: ".env.local" });
 
 export default defineConfig({
   earlyAccess: true,
@@ -8,8 +11,10 @@ export default defineConfig({
   },
   migrate: {
     adapter: {
-      provider: "postgres",
-      url: process.env.DATABASE_URL,
-    },
+      provider = "postgresql"
+  url       = env("DATABASE_URL")
+    }
+
   },
-});
+},
+});;
