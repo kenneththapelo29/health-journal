@@ -167,7 +167,7 @@ export default function MoodPage() {
       : null;
 
   const latestMood = moods[0];
-  const formatChartDate = (d: string) => {
+  const formatChartDate = (d: any) => {
     try { return format(new Date(d), "MMM d"); } catch { return d; }
   };
 

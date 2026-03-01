@@ -132,7 +132,7 @@ export default function SleepPage() {
   const latestLog = sleepLogs[0];
   const latestDuration = latestLog ? calcDuration(latestLog.bedtime, latestLog.wakeTime) : null;
 
-  const formatChartDate = (d: string) => {
+  const formatChartDate = (d: any) => {
     try { return format(new Date(d), "MMM d"); } catch { return d; }
   };
 

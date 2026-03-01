@@ -137,7 +137,7 @@ export default function WorkoutsPage() {
   const totalCaloriesToday = todayWorkouts.reduce((acc, w) => acc + (w.calories || 0), 0);
   const totalWorkoutsWeek = workouts.length;
 
-  const formatChartDate = (dateStr: string) => {
+  const formatChartDate = (dateStr: any) => {
     try {
       return format(new Date(dateStr), "MMM d");
     } catch {

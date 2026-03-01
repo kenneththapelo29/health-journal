@@ -35,7 +35,7 @@ interface Summary {
   avgCaloriesPerDay: number;
 }
 
-const formatDate = (d: string) => {
+const formatDate = (d: any) => {
   try { return format(new Date(d), "MMM d"); } catch { return d; }
 };
 
@@ -205,7 +205,7 @@ export default function AnalyticsPage() {
                           <PolarGrid />
                           <PolarAngleAxis dataKey="metric" />
                           <Radar name="Health" dataKey="value" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.3} />
-                          <Tooltip formatter={(val: number) => `${Math.round(val)}%`} />
+                          <Tooltip formatter={(val: any) => `${Math.round(val)}%`} />
                         </RadarChart>
                       </ResponsiveContainer>
                     </div>

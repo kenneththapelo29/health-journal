@@ -9,7 +9,7 @@ export type Medication = {
   time: Date;
   taken: boolean;
   timestamp: Date;
-  notes?: string;
+  notes?: string | null;
 };
 
 // Get all medications for a user

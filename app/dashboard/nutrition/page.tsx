@@ -155,7 +155,7 @@ export default function NutritionPage() {
 
   const pieData = macroData.map((m) => ({ name: m.name, value: m.value }));
 
-  const formatChartDate = (d: string) => {
+  const formatChartDate = (d: any) => {
     try { return format(new Date(d), "MMM d"); } catch { return d; }
   };
 

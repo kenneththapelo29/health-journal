@@ -84,7 +84,7 @@ export async function GET(req: NextRequest) {
     avgSleepDuration: sleepTrend.length > 0 ? Math.round((sleepTrend.reduce((a, s) => a + s.duration, 0) / sleepTrend.length) * 10) / 10 : 0,
     avgMood: moods.length > 0 ? Math.round((moods.reduce((a, m) => a + m.rating, 0) / moods.length) * 10) / 10 : 0,
     medicationAdherence: adherenceRate,
-    avgCaloriesPerDay: nutritionTrend.length > 0 ? Math.round(nutritionTrend.reduce((a, n) => a + n.calories, 0) / nutritionTrend.length) : 0,
+    avgCaloriesPerDay: nutritionTrend.length > 0 ? Math.round(nutritionTrend.reduce((a: number, n: any) => a + (n.calories || 0), 0) / nutritionTrend.length) : 0,
   };
 
   return NextResponse.json({ vitalsTrend, moodTrend, sleepTrend, workoutTrend, nutritionTrend, summary });

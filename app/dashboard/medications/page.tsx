@@ -134,7 +134,7 @@ export default function MedicationsPage() {
     .filter((m) => !m.taken)
     .sort((a, b) => new Date(a.time).getTime() - new Date(b.time).getTime())[0];
 
-  const formatTime = (iso: string) => {
+  const formatTime = (iso: any) => {
     try {
       return format(new Date(iso), "hh:mm a");
     } catch {
@@ -142,7 +142,7 @@ export default function MedicationsPage() {
     }
   };
 
-  const formatChartDate = (dateStr: string) => {
+  const formatChartDate = (dateStr: any) => {
     try {
       return format(new Date(dateStr), "MMM d");
     } catch {
