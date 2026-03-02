@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -166,9 +167,9 @@ export function Header() {
             <DropdownMenuContent className="w-56" align="end" forceMount>
               <DropdownMenuLabel className="font-normal">
                 <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">User</p>
+                  <p className="text-sm font-medium leading-none">{session?.user?.name || "User"}</p>
                   <p className="text-xs leading-none text-muted-foreground">
-                    user@example.com
+                    {session?.user?.email || "user@example.com"}
                   </p>
                 </div>
               </DropdownMenuLabel>
@@ -190,6 +191,7 @@ export function Header() {
 }
 
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { data: session } = useSession();
   return (
     <div className="flex min-h-screen">
       <aside className="hidden lg:block w-72 flex-shrink-0">
