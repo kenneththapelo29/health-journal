@@ -153,7 +153,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center gap-4 px-4 lg:px-8">
         <MobileSidebar />
-        
+
         <div className="flex flex-1 items-center justify-end gap-4">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -183,7 +183,7 @@ export function Header() {
               <DropdownMenuItem>
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
-              </DropdownMenuItem>
+              </DropdownMenuItem> onClick={() => signOut({ callbackUrl: "/" })}>>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
